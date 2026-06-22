@@ -1,7 +1,8 @@
 /* src/app/globals.css */
 
-@tailwind base;
-@tailwind components;
+@import "tailwindcss";
+
+
 @tailwind utilities;
 
 /* ── Base resets ──────────────────────────────────────────── */
