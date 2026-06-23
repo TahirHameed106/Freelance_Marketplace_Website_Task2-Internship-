@@ -92,7 +92,7 @@ export default function Categories() {
               Top Categories
             </h2>
           </div>
-          <a href="#" className="text-sm font-medium text-emerald-600 hover:text-emerald-700 flex items-center gap-1 group flex-shrink-0">
+          <a href="#" className="text-sm font-medium text-emerald-600 hover:text-emerald-700 flex items-center gap-1 group shrink-0">
             View all categories
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
           </a>
@@ -106,14 +106,14 @@ export default function Categories() {
                 href="#"
                 className="group flex items-center gap-4 bg-white rounded-2xl border border-slate-100 p-5 hover:border-emerald-200 hover:shadow-md hover:shadow-emerald-50 transition-all duration-200"
               >
-                <div className={`w-12 h-12 ${cat.bg} border ${cat.border} rounded-xl flex items-center justify-center ${cat.color} flex-shrink-0 group-hover:scale-105 transition-transform duration-200`}>
+                <div className={`w-12 h-12 ${cat.bg} border ${cat.border} rounded-xl flex items-center justify-center ${cat.color} shrink-0 group-hover:scale-105 transition-transform duration-200`}>
                   {cat.icon}
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors truncate">{cat.title}</h3>
                   <p className="text-xs text-slate-400 mt-0.5">{cat.count}</p>
                 </div>
-                <svg className="w-4 h-4 text-slate-300 group-hover:text-emerald-400 flex-shrink-0 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                <svg className="w-4 h-4 text-slate-300 group-hover:text-emerald-400 shrink-0 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
             </li>
           ))}
