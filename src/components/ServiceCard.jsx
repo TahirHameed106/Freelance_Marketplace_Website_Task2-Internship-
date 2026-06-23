@@ -31,7 +31,7 @@ export default function ServiceCard({ service }) {
     <article className="group bg-white rounded-2xl border border-slate-100 overflow-hidden hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-50/60 transition-all duration-200 flex flex-col">
 
       {/* Image */}
-      <div className="relative overflow-hidden h-44 bg-slate-100 flex-shrink-0">
+      <div className="relative overflow-hidden h-44 bg-slate-100 shrink-0">
         <img
           src={service.image}
           alt={service.title}
@@ -52,7 +52,7 @@ export default function ServiceCard({ service }) {
         {/* Freelancer */}
         <div className="flex items-center gap-2 mb-3">
           <div
-            className={`w-7 h-7 rounded-full bg-gradient-to-br ${service.freelancerGradient} flex items-center justify-center text-white text-xs font-bold flex-shrink-0`}
+            className={`w-7 h-7 rounded-full bg-linear-to-br ${service.freelancerGradient} flex items-center justify-center text-white text-xs font-bold shrink-0`}
             aria-hidden="true"
           >
             {service.freelancerInitials}

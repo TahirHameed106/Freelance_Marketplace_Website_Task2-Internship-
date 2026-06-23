@@ -73,7 +73,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* ── Page Header ──────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 border-b border-slate-100 pt-28 pb-10">
+      <section className="bg-linear-to-br from-slate-50 via-white to-emerald-50/30 border-b border-slate-100 pt-28 pb-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Breadcrumb */}
@@ -100,7 +100,7 @@ export default function ServicesPage() {
           {/* ── Search bar ─────────────────────────────────── */}
           <div className="mt-7 flex items-center gap-3 max-w-2xl">
             <div className="flex-1 flex items-center gap-2 bg-white border border-slate-200 rounded-2xl px-4 py-2.5 shadow-sm focus-within:border-emerald-400 focus-within:shadow-emerald-100 focus-within:shadow-md transition-all duration-200">
-              <svg className="w-4 h-4 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+              <svg className="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                 <circle cx="11" cy="11" r="8"/><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35"/>
               </svg>
               <input
@@ -123,7 +123,7 @@ export default function ServicesPage() {
                 </button>
               )}
             </div>
-            <button className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors duration-150 flex-shrink-0">
+            <button className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors duration-150 shrink-0">
               Search
             </button>
           </div>
@@ -136,14 +136,14 @@ export default function ServicesPage() {
           <div className="flex items-center justify-between gap-4 py-3 overflow-x-auto scrollbar-hide">
 
             {/* Category pills */}
-            <div className="flex items-center gap-2 flex-shrink-0" role="tablist" aria-label="Filter by category">
+            <div className="flex items-center gap-2 shrink-0" role="tablist" aria-label="Filter by category">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
                   role="tab"
                   aria-selected={category === cat.id}
                   onClick={() => setCategory(cat.id)}
-                  className={`flex-shrink-0 text-xs font-medium px-4 py-2 rounded-full border transition-all duration-150
+                  className={`shrink-0 text-xs font-medium px-4 py-2 rounded-full border transition-all duration-150
                     ${category === cat.id
                       ? 'bg-emerald-500 border-emerald-500 text-white'
                       : 'bg-white border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-emerald-600'
@@ -155,7 +155,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Sort + count */}
-            <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="flex items-center gap-3 shrink-0">
               <span className="text-xs text-slate-400 whitespace-nowrap hidden sm:block">
                 {filtered.length} result{filtered.length !== 1 ? 's' : ''}
               </span>
