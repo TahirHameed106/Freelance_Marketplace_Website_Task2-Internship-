@@ -1,128 +1,350 @@
 'use client';
-// src/components/Navbar.jsx
-// Updated Day 2 — added Services link + active route highlighting
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { label: 'Find Talent',     href: '/#categories' },
+  { label: 'Find Talent', href: '/#categories' },
   { label: 'Browse Services', href: '/services' },
-  { label: 'How It Works',    href: '/#how-it-works' },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Enterprise', href: '/enterprise' },
 ];
 
 export default function Navbar() {
-  const [scrolled,  setScrolled]  = useState(false);
-  const [menuOpen,  setMenuOpen]  = useState(false);
   const pathname = usePathname();
 
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [menuOpen]);
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
 
-  useEffect(() => { setMenuOpen(false); }, [pathname]);
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-          ${scrolled
-            ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100'
-            : 'bg-transparent'}`}
-        role="banner"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+      <header className="fixed top-4 left-0 right-0 z-50 px-4">
+        <div
+          className={`
+            mx-auto
+            max-w-7xl
+            rounded-2xl
+            border
+            border-white/20
+            bg-white/75
+            backdrop-blur-xl
+            transition-all
+            duration-300
+            ${
+              scrolled
+                ? 'shadow-xl py-2'
+                : 'shadow-lg py-3'
+            }
+          `}
+        >
+          <div className="px-4 sm:px-6">
+            <div className="flex items-center justify-between">
 
-            <Link href="/" className="flex items-center gap-2.5 shrink-0" aria-label="SkillBridge home">
-              <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                  <path d="M3 9h5M10 9h5M9 3v5M9 10v5" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
-                  <circle cx="9" cy="9" r="2" fill="white"/>
-                </svg>
-              </div>
-              <span className="font-bold text-lg text-slate-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
-                Skill<span className="text-emerald-500">Bridge</span>
-              </span>
-            </Link>
+              {/* Logo */}
+              <Link
+                href="/"
+                className="flex items-center gap-3 shrink-0"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-emerald-600 shadow-lg">
+                  <span className="text-sm font-bold text-white">
+                    SB
+                  </span>
+                </div>
 
-            <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-150
-                    ${pathname === link.href
-                      ? 'text-emerald-600 bg-emerald-50'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'}`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="hidden lg:flex items-center gap-3">
-              <Link href="#" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors px-3 py-2">Log in</Link>
-              <Link href="#" className="text-sm font-medium text-slate-700 border border-slate-200 rounded-xl px-4 py-2 hover:bg-slate-50 transition-colors">Sign up</Link>
-              <Link href="/services" className="text-sm font-semibold bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl px-4 py-2 transition-all duration-150 shadow-sm hover:shadow-emerald-200 hover:shadow-md">
-                Post a Project
+                <div>
+                  <span
+                    className="text-xl font-bold text-slate-900"
+                    style={{
+                      fontFamily:
+                        'Plus Jakarta Sans, sans-serif',
+                    }}
+                  >
+                    Skill
+                    <span className="text-emerald-500">
+                      Bridge
+                    </span>
+                  </span>
+                </div>
               </Link>
-            </div>
 
-            <button
-              className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
-              onClick={() => setMenuOpen((p) => !p)}
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={menuOpen}
-              aria-controls="mobile-menu"
-            >
-              <span className="block w-5 h-0.5 bg-current mb-1.5 transition-all duration-200" style={{ transform: menuOpen ? 'translateY(8px) rotate(45deg)' : '' }} />
-              <span className="block w-5 h-0.5 bg-current mb-1.5 transition-all duration-200" style={{ opacity: menuOpen ? 0 : 1 }} />
-              <span className="block w-5 h-0.5 bg-current transition-all duration-200" style={{ transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : '' }} />
-            </button>
+              {/* Navigation */}
+              <nav className="hidden lg:flex items-center gap-1">
+                {navLinks.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={`
+                      rounded-xl
+                      px-4
+                      py-2
+                      text-sm
+                      font-medium
+                      transition-all
+                      ${
+                        pathname === item.href
+                          ? 'bg-emerald-50 text-emerald-600'
+                          : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                      }
+                    `}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+
+              {/* Search */}
+              <div className="hidden xl:block w-full max-w-xs mx-6">
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search freelancers..."
+                    className="
+                      w-full
+                      rounded-xl
+                      border
+                      border-slate-200
+                      bg-slate-50
+                      py-2
+                      pl-10
+                      pr-4
+                      text-sm
+                      outline-none
+                      focus:border-emerald-500
+                    "
+                  />
+
+                  <svg
+                    className="absolute left-3 top-2.5 text-slate-400"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <circle cx="7" cy="7" r="5" />
+                    <line x1="11" y1="11" x2="15" y2="15" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Desktop Actions */}
+              <div className="hidden lg:flex items-center gap-3">
+
+                <div className="hidden 2xl:flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+                  ⭐ 10K+ Freelancers
+                </div>
+
+                <Link
+                  href="/login"
+                  className="
+                    text-sm
+                    font-medium
+                    text-slate-600
+                    hover:text-slate-900
+                  "
+                >
+                  Log In
+                </Link>
+
+                <Link
+                  href="/signup"
+                  className="
+                    rounded-xl
+                    border
+                    border-slate-200
+                    px-4
+                    py-2
+                    text-sm
+                    font-medium
+                    hover:bg-slate-50
+                  "
+                >
+                  Sign Up
+                </Link>
+
+                <Link
+                  href="/post-project"
+                  className="
+                    rounded-xl
+                    bg-slate-900
+                    px-5
+                    py-2.5
+                    text-sm
+                    font-semibold
+                    text-white
+                    transition-all
+                    hover:bg-slate-800
+                  "
+                >
+                  Post a Project
+                </Link>
+              </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMobileOpen(true)}
+                className="
+                  rounded-xl
+                  p-2
+                  text-slate-600
+                  hover:bg-slate-100
+                  lg:hidden
+                "
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
+      {/* MOBILE MENU */}
       <div
-        id="mobile-menu"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile navigation"
-        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-200 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`
+          fixed
+          inset-0
+          z-60
+          lg:hidden
+          transition-all
+          duration-300
+          ${
+            mobileOpen
+              ? 'visible opacity-100'
+              : 'invisible opacity-0'
+          }
+        `}
       >
-        <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setMenuOpen(false)} />
-        <div className={`absolute top-0 right-0 bottom-0 w-72 bg-white shadow-xl flex flex-col transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="flex items-center justify-between p-4 border-b border-slate-100">
-            <span className="font-bold text-slate-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>Menu</span>
-            <button onClick={() => setMenuOpen(false)} className="p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500" aria-label="Close menu">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <line x1="4" y1="4" x2="14" y2="14"/><line x1="14" y1="4" x2="4" y2="14"/>
-              </svg>
+        <div
+          className="absolute inset-0 bg-slate-950/60 backdrop-blur-md"
+          onClick={() => setMobileOpen(false)}
+        />
+
+        <div
+          className={`
+            absolute
+            inset-y-0
+            right-0
+            w-full
+            max-w-sm
+            bg-white
+            shadow-2xl
+            transition-transform
+            duration-300
+            ${
+              mobileOpen
+                ? 'translate-x-0'
+                : 'translate-x-full'
+            }
+          `}
+        >
+          <div className="flex items-center justify-between border-b p-5">
+            <h3
+              className="text-lg font-bold"
+              style={{
+                fontFamily:
+                  'Plus Jakarta Sans, sans-serif',
+              }}
+            >
+              Menu
+            </h3>
+
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="rounded-lg p-2 hover:bg-slate-100"
+            >
+              ✕
             </button>
           </div>
-          <nav className="flex-1 overflow-y-auto p-4 flex flex-col gap-1" aria-label="Mobile navigation">
-            {navLinks.map((link) => (
-              <Link key={link.label} href={link.href}
-                className={`block px-4 py-3 text-sm font-medium rounded-xl transition-colors
-                  ${pathname === link.href ? 'bg-emerald-50 text-emerald-600' : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'}`}
+
+          <nav className="p-5 flex flex-col gap-2">
+            {navLinks.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="
+                  rounded-xl
+                  px-4
+                  py-3
+                  text-slate-700
+                  hover:bg-slate-100
+                "
               >
-                {link.label}
+                {item.label}
               </Link>
             ))}
           </nav>
-          <div className="p-4 border-t border-slate-100 flex flex-col gap-3">
-            <Link href="#" className="text-center text-sm font-medium text-slate-700 border border-slate-200 rounded-xl px-4 py-2.5 hover:bg-slate-50 transition-colors">Log in</Link>
-            <Link href="#" className="text-center text-sm font-medium text-slate-700 border border-slate-200 rounded-xl px-4 py-2.5 hover:bg-slate-50 transition-colors">Sign up</Link>
-            <Link href="/services" className="text-center text-sm font-semibold bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl px-4 py-2.5 transition-colors">Post a Project</Link>
+
+          <div className="border-t p-5 flex flex-col gap-3">
+            <Link
+              href="/login"
+              className="
+                rounded-xl
+                border
+                border-slate-200
+                py-3
+                text-center
+              "
+            >
+              Log In
+            </Link>
+
+            <Link
+              href="/signup"
+              className="
+                rounded-xl
+                border
+                border-slate-200
+                py-3
+                text-center
+              "
+            >
+              Sign Up
+            </Link>
+
+            <Link
+              href="/post-project"
+              className="
+                rounded-xl
+                bg-slate-900
+                py-3
+                text-center
+                font-semibold
+                text-white
+              "
+            >
+              Post a Project
+            </Link>
           </div>
         </div>
       </div>
