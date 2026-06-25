@@ -1,8 +1,6 @@
-import { useParams } from "react-router-dom";
 import { getServiceById } from "../data/sellers";
 
 export default function ServiceDetails() {
-  const { serviceId } = useParams();
 
   const service = getServiceById(serviceId);
 
