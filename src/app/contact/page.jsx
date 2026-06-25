@@ -1,96 +1,91 @@
-'use client';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 
-import { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+export const metadata = {
+  title: "Contact Us | SkillBridge",
+};
 
 export default function ContactPage() {
-  const [errors, setErrors] = useState({});
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const form = e.target;
-
-    const newErrors = {};
-
-    if (!form.name.value)
-      newErrors.name = 'Name is required';
-
-    if (!form.email.value)
-      newErrors.email = 'Email is required';
-
-    if (
-      form.email.value &&
-      !/\S+@\S+\.\S+/.test(form.email.value)
-    ) {
-      newErrors.email = 'Invalid email';
-    }
-
-    if (!form.subject.value)
-      newErrors.subject = 'Subject is required';
-
-    if (!form.message.value)
-      newErrors.message = 'Message is required';
-
-    setErrors(newErrors);
-
-    if (Object.keys(newErrors).length === 0) {
-      alert('Message Sent Successfully');
-      form.reset();
-    }
-  };
-
   return (
     <>
       <Navbar />
 
-      <main className="max-w-4xl mx-auto px-6 py-16">
-        <h1 className="text-5xl font-bold mb-8">
-          Contact Us
-        </h1>
+      <main>
 
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-4"
-        >
-          <input
-            name="name"
-            placeholder="Full Name"
-            className="w-full border p-3 rounded-lg"
-          />
-          <p className="text-red-500">{errors.name}</p>
+        {/* Hero */}
+        <section className="bg-slate-900 py-20">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <h1 className="text-5xl font-bold text-white">
+              Contact SkillBridge
+            </h1>
 
-          <input
-            name="email"
-            placeholder="Email Address"
-            className="w-full border p-3 rounded-lg"
-          />
-          <p className="text-red-500">{errors.email}</p>
+            <p className="text-slate-300 mt-5 max-w-2xl mx-auto">
+              We'd love to hear from you. Whether you have questions,
+              feedback, or business inquiries, our team is here to help.
+            </p>
+          </div>
+        </section>
 
-          <input
-            name="subject"
-            placeholder="Subject"
-            className="w-full border p-3 rounded-lg"
-          />
-          <p className="text-red-500">{errors.subject}</p>
+        {/* Contact Section */}
 
-          <textarea
-            rows="6"
-            name="message"
-            placeholder="Message"
-            className="w-full border p-3 rounded-lg"
-          />
+        <section className="py-20 bg-slate-50">
 
-          <p className="text-red-500">{errors.message}</p>
+          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
 
-          <button
-            type="submit"
-            className="bg-indigo-600 text-white px-6 py-3 rounded-lg"
-          >
-            Send Message
-          </button>
-        </form>
+            {/* Left */}
+
+            <div>
+
+              <h2 className="text-3xl font-bold mb-8">
+                Get in Touch
+              </h2>
+
+              <div className="space-y-8">
+
+                <div>
+                  <h3 className="font-bold text-lg">
+                    Email
+                  </h3>
+
+                  <p className="text-slate-600">
+                    support@skillbridge.com
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-lg">
+                    Phone
+                  </h3>
+
+                  <p className="text-slate-600">
+                    +1 (555) 123-4567
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-lg">
+                    Office
+                  </h3>
+
+                  <p className="text-slate-600">
+                    245 Market Street<br />
+                    San Francisco, CA
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Right */}
+
+            <ContactForm />
+
+          </div>
+
+        </section>
+
       </main>
 
       <Footer />
