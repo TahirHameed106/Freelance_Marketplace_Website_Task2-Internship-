@@ -15,14 +15,14 @@ export default function TrustedBy() {
         {/* Scrolling marquee */}
         <div className="relative overflow-hidden">
           {/* Fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" aria-hidden="true" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" aria-hidden="true" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" aria-hidden="true" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" aria-hidden="true" />
 
           <div className="flex gap-12 animate-marquee whitespace-nowrap" aria-hidden="true">
             {[...companies, ...companies].map((name, i) => (
               <span
                 key={`${name}-${i}`}
-                className="text-slate-300 font-bold text-xl tracking-tight flex-shrink-0 hover:text-slate-500 transition-colors cursor-default select-none"
+                className="text-slate-300 font-bold text-xl tracking-tight shrink-0 hover:text-slate-500 transition-colors cursor-default select-none"
                 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}
               >
                 {name}
