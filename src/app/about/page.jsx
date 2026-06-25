@@ -247,7 +247,7 @@ export default function AboutPage() {
             <ol className="relative border-l-2 border-slate-100 pl-8 flex flex-col gap-8">
               {milestones.map((m) => (
                 <li key={m.year} className="relative">
-                  <span className="absolute -left-[37px] top-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-white" aria-hidden="true" />
+                  <span className="absolute -left-9.25 top-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-white" aria-hidden="true" />
                   <span className="inline-block text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-3 py-1 mb-2">
                     {m.year}
                   </span>
