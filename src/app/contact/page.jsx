@@ -1,49 +1,96 @@
+'use client';
+
+import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-export default function AboutPage() {
+export default function ContactPage() {
+  const [errors, setErrors] = useState({});
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+
+    const newErrors = {};
+
+    if (!form.name.value)
+      newErrors.name = 'Name is required';
+
+    if (!form.email.value)
+      newErrors.email = 'Email is required';
+
+    if (
+      form.email.value &&
+      !/\S+@\S+\.\S+/.test(form.email.value)
+    ) {
+      newErrors.email = 'Invalid email';
+    }
+
+    if (!form.subject.value)
+      newErrors.subject = 'Subject is required';
+
+    if (!form.message.value)
+      newErrors.message = 'Message is required';
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      alert('Message Sent Successfully');
+      form.reset();
+    }
+  };
+
   return (
     <>
       <Navbar />
 
-      <main className="max-w-7xl mx-auto px-6 py-16">
+      <main className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-5xl font-bold mb-8">
-          About SkillBridge
+          Contact Us
         </h1>
 
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-2xl font-bold mb-2">
-              Company Introduction
-            </h2>
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-4"
+        >
+          <input
+            name="name"
+            placeholder="Full Name"
+            className="w-full border p-3 rounded-lg"
+          />
+          <p className="text-red-500">{errors.name}</p>
 
-            <p className="text-gray-600">
-              SkillBridge is a freelance marketplace connecting
-              businesses with talented professionals around the world.
-            </p>
-          </div>
+          <input
+            name="email"
+            placeholder="Email Address"
+            className="w-full border p-3 rounded-lg"
+          />
+          <p className="text-red-500">{errors.email}</p>
 
-          <div>
-            <h2 className="text-2xl font-bold mb-2">
-              Mission
-            </h2>
+          <input
+            name="subject"
+            placeholder="Subject"
+            className="w-full border p-3 rounded-lg"
+          />
+          <p className="text-red-500">{errors.subject}</p>
 
-            <p className="text-gray-600">
-              Our mission is to make hiring freelancers easy,
-              secure, and accessible for everyone.
-            </p>
-          </div>
+          <textarea
+            rows="6"
+            name="message"
+            placeholder="Message"
+            className="w-full border p-3 rounded-lg"
+          />
 
-          <div>
-            <h2 className="text-2xl font-bold mb-2">
-              Vision
-            </h2>
+          <p className="text-red-500">{errors.message}</p>
 
-            <p className="text-gray-600">
-              To become the most trusted freelance marketplace.
-            </p>
-          </div>
-        </div>
+          <button
+            type="submit"
+            className="bg-indigo-600 text-white px-6 py-3 rounded-lg"
+          >
+            Send Message
+          </button>
+        </form>
       </main>
 
       <Footer />
