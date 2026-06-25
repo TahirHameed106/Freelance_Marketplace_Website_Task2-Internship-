@@ -31,7 +31,6 @@
   --radius-2xl: 16px;
   --radius-3xl: 24px;
 }
-
 /* ── Base resets ──────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 

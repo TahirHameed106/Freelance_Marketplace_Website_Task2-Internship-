@@ -106,7 +106,7 @@ export default function ServiceCard({ service }) {
 
         {/* CTA */}
         <Link
-          href={`/services/${service.id}`}
+          href={`/service/${service.id}`}
           className="mt-3 block text-center text-xs font-semibold text-emerald-600 border border-emerald-200 rounded-xl py-2 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-all duration-150"
         >
           View Service

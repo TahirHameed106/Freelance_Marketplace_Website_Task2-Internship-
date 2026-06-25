@@ -1,5 +1,6 @@
 // src/data/sellers.js
 // Mock data for seller profiles and their services
+import { services } from './services';
 
 export const sellers = [
   {
@@ -246,10 +247,21 @@ My process starts with a deep discovery session to understand your brand values,
   },
 ];
 
+// export function getSellerById(id) {
+//   return sellers.find((s) => s.id === id) || null;
+// }
+
+
+// export function getServiceById(id) {
+//   return serviceDetails.find((s) => s.id === Number(id)) || null;
+// }
+
 export function getSellerById(id) {
-  return sellers.find((s) => s.id === id) || null;
+  return sellers.find((seller) => seller.id === id) || null;
 }
 
 export function getServiceById(id) {
-  return serviceDetails.find((s) => s.id === Number(id)) || null;
+  return serviceDetails.find(
+    (service) => service.id === Number(id)
+  ) || null;
 }
