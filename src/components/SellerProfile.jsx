@@ -1,8 +1,8 @@
-import { useParams, Link } from "react-router-dom";
+import Link from "next/link";
+
 import { getSellerById } from "../data/sellers";
 
 export default function SellerProfile() {
-  const { sellerId } = useParams();
   const seller = getSellerById(sellerId);
 
   if (!seller) {
