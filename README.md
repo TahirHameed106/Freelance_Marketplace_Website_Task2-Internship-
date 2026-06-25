@@ -189,17 +189,15 @@ No backend or database is used. All data is stored locally inside the `src/data`
 
 ---
 
-## 🛠 Current Status
+## 📅 Project Progress
 
-| Feature           | Status          |
-| ----------------- | --------------- |
-| Home Page         | ✅ Complete      |
-| Services Page     | ✅ Complete      |
-| Seller Profile    | ✅ Complete      |
-| Service Details   | ✅ Complete      |
-| About Page        | 🚧 In Progress  |
-| Contact Page      | 🚧 In Progress  |
-| Responsive Design | 🚧 Final Polish |
+| Day       | Task                                                                                   | Status         |
+| --------- | -------------------------------------------------------------------------------------- | -------------- |
+| **Day 1** | Project setup, Home page, Navbar, Footer, Hero, Categories, Testimonials               | ✅ Completed    |
+| **Day 2** | Services page with search, filtering, sorting, and responsive service cards            | ✅ Completed    |
+| **Day 3** | Seller Profile page, Service Details page, dynamic routing, and mock data integration  | ✅ Completed    |
+| **Day 4** | About Us page and Contact page                                                         | ✅ Completed    |
+| **Day 5** | Responsive testing, animations, performance optimization, deployment, and final polish | 🚧 In Progress |
 
 ---
 
