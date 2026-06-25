@@ -1,116 +1,214 @@
 # SkillBridge — Freelance Marketplace Platform
 
-A modern, responsive freelance marketplace web application built with Next.js 15 and Tailwind CSS v4. Inspired by platforms like Fiverr and Upwork.
+A modern, responsive freelance marketplace built with **Next.js 16**, **React 19**, and **Tailwind CSS v4**. SkillBridge connects clients with talented freelancers across multiple service categories through a clean, intuitive, and responsive user interface inspired by platforms like Fiverr and Upwork.
 
 ---
 
-## Tech Stack
+## 🚀 Tech Stack
 
-| Tool | Purpose |
-|---|---|
-| Next.js 16 (App Router) | Framework + routing |
-| React 19 | UI components |
-| Tailwind CSS v4 | Styling |
-| JavaScript (JSX) | No TypeScript |
-
----
-
-## Project Status
-
-| Day | Task | Status |
-|---|---|---|
-| Day 1 | Project setup + Home page | ✅ Done |
-| Day 2 | Services page | ✅ Done |
-| Day 3 | Seller Profile + Service Details pages | 🔲 Pending |
-| Day 4 | About Us + Contact pages | 🔲 Pending |
-| Day 5 | Responsiveness, animations, final polish | 🔲 Pending |
+| Technology              | Purpose             |
+| ----------------------- | ------------------- |
+| Next.js 16 (App Router) | Framework & Routing |
+| React 19                | UI Components       |
+| Tailwind CSS v4         | Styling             |
+| JavaScript (JSX)        | Application Logic   |
 
 ---
 
-## Pages Built
+## 📌 Features
 
-### Home (`/`)
-- Sticky navbar with mobile drawer
-- Hero section with search bar and popular tags
-- Trusted companies marquee
-- Featured service categories
-- Top freelancer cards
-- How It Works steps
-- Why Choose Us section
-- Statistics bar
-- Testimonials
-- Dual CTA (client + freelancer)
-- Footer
+### 🏠 Home Page
 
-### Services (`/services`)
-- Live search by title, description, or freelancer name
-- Category filter pills (All, Web Dev, Design, Writing, Marketing, Video, Programming)
-- Sort by: Most Relevant, Top Rated, Price, Most Reviews
-- Responsive card grid (1 → 2 → 3 → 4 columns)
-- Active filter chips with individual clear buttons
-- Empty state with reset option
-- 14 service cards with badge, rating, delivery time, price
+* Responsive sticky navigation bar
+* Mobile navigation drawer
+* Hero section with search functionality
+* Trusted companies marquee
+* Featured service categories
+* Top freelancers showcase
+* How It Works section
+* Why Choose Us section
+* Statistics section
+* Client testimonials
+* Dual Call-to-Action section
+* Responsive footer
 
 ---
 
-## Folder Structure
+### 💼 Services Page
 
-```
+* 14 mock freelance services
+* Live search by title, description, and freelancer
+* Category filtering
+* Multiple sorting options
+* Responsive service grid
+* Active filter chips
+* Empty state with reset option
+* Service badges (Best Seller, Top Rated, Premium)
+
+---
+
+### 👤 Seller Profile Page
+
+* Professional seller information
+* Profile avatar and cover
+* Ratings and reviews
+* Skills section
+* Portfolio gallery
+* Work experience
+* Education
+* Languages
+* Seller statistics
+* Active services
+
+---
+
+### 📄 Service Details Page
+
+* Large banner image
+* Service gallery
+* Complete service description
+* Feature list
+* Pricing packages
+* Tags
+* Customer reviews
+* Seller information
+* Delivery details
+* Revision information
+
+---
+
+## 📁 Project Structure
+
+```text
 skillbridge/
 ├── src/
 │   ├── app/
-│   │   ├── layout.jsx          # Root HTML shell, fonts, metadata
-│   │   ├── page.jsx            # Home page route (/)
-│   │   ├── globals.css         # Tailwind v4 imports + global styles
-│   │   └── services/
-│   │       ├── layout.jsx      # Services layout wrapper
-│   │       └── page.jsx        # Services page (/services)
+│   │   ├── layout.jsx
+│   │   ├── page.jsx
+│   │   ├── globals.css
+│   │   ├── services/
+│   │   │   └── page.jsx
+│   │   ├── seller/
+│   │   │   └── [id]/
+│   │   │       └── page.jsx
+│   │   └── service/
+│   │       └── [id]/
+│   │           └── page.jsx
+│   │
 │   ├── components/
-│   │   ├── Navbar.jsx          # Sticky navbar + mobile drawer
-│   │   ├── Hero.jsx            # Hero section
-│   │   ├── TrustedBy.jsx       # Company logos marquee
-│   │   ├── Categories.jsx      # Service category cards
-│   │   ├── TopFreelancers.jsx  # Freelancer profile cards
-│   │   ├── HowItWorks.jsx      # Steps + Why Choose Us
-│   │   ├── Testimonials.jsx    # Stats bar + reviews
-│   │   ├── CTA.jsx             # Dual call-to-action section
-│   │   ├── Footer.jsx          # Site footer
-│   │   └── ServiceCard.jsx     # Reusable service card (Day 2)
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── TrustedBy.jsx
+│   │   ├── Categories.jsx
+│   │   ├── TopFreelancers.jsx
+│   │   ├── HowItWorks.jsx
+│   │   ├── Testimonials.jsx
+│   │   ├── CTA.jsx
+│   │   ├── Footer.jsx
+│   │   ├── ServiceCard.jsx
+│   │   ├── SellerProfilePage.jsx
+│   │   └── ServiceDetailsPage.jsx
+│   │
 │   └── data/
-│       └── services.js         # Mock data for 14 services
-├── postcss.config.mjs          # Tailwind v4 PostCSS plugin
-└── package.json
+│       ├── services.js
+│       └── sellers.js
+│
+├── public/
+│   └── services/
+│
+├── package.json
+├── postcss.config.mjs
+└── README.md
 ```
 
 ---
 
-## Getting Started
+## 📦 Installation
+
+Clone the repository
 
 ```bash
-# Install dependencies
-npm install
+git clone <repository-url>
+```
 
-# Run development server
+Install dependencies
+
+```bash
+npm install
+```
+
+Start the development server
+
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open your browser and visit
+
+```
+http://localhost:3000
+```
 
 ---
 
-## Important: Tailwind v4 Setup
+## 🎯 Pages
 
-This project uses **Tailwind CSS v4** which is different from v3.
-
-- No `tailwind.config.js` file — it does not exist and is not needed
-- Configuration goes inside `globals.css` using `@theme {}`
-- Import is `@import "tailwindcss"` not `@tailwind base/components/utilities`
-- PostCSS plugin is `@tailwindcss/postcss` not `tailwindcss`
+| Route           | Description         |
+| --------------- | ------------------- |
+| `/`             | Home Page           |
+| `/services`     | Browse all services |
+| `/seller/[id]`  | Seller Profile      |
+| `/service/[id]` | Service Details     |
 
 ---
 
-## Internship Task
+## 🎨 Tailwind CSS v4 Notes
 
-**Company:** SoftGrid Solutions  
-**Deadline:** 5 Days  
-**Stack:** Next.js + Tailwind CSS (HTML/CSS/JS also accepted per task brief)
+This project uses **Tailwind CSS v4**.
+
+* No `tailwind.config.js`
+* Configuration lives inside `globals.css`
+* Uses `@import "tailwindcss"`
+* Uses `@tailwindcss/postcss`
+
+---
+
+## 📚 Mock Data
+
+The application currently contains:
+
+* 14 freelance services
+* Multiple service categories
+* Seller profiles
+* Service details
+* Pricing packages
+* Reviews
+* Portfolio items
+
+No backend or database is used. All data is stored locally inside the `src/data` directory.
+
+---
+
+## 🛠 Current Status
+
+| Feature           | Status          |
+| ----------------- | --------------- |
+| Home Page         | ✅ Complete      |
+| Services Page     | ✅ Complete      |
+| Seller Profile    | ✅ Complete      |
+| Service Details   | ✅ Complete      |
+| About Page        | 🚧 In Progress  |
+| Contact Page      | 🚧 In Progress  |
+| Responsive Design | 🚧 Final Polish |
+
+---
+
+## 👨‍💻 Internship Project
+
+**Project:** SkillBridge — Freelance Marketplace
+
+**Company:** SoftGrid Solutions
+
+**Purpose:** Internship Assessment Project
+
+**Built With:** Next.js 16, React 19, Tailwind CSS v4
