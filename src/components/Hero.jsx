@@ -91,13 +91,16 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="#"
-                className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 hover:-translate-y-0.5 text-white font-semibold text-sm rounded-xl px-6 py-3 transition-all duration-150 shadow-sm hover:shadow-md"
+                  style={{ color: "#fff" }}
+                  className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 hover:-translate-y-0.5 text-white no-underline font-semibold text-sm rounded-xl px-6 py-3 transition-all duration-150 shadow-sm hover:shadow-md"
+
               >
                 Hire a Freelancer
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </a>
               <a
                 href="#"
+                  style={{ color: "#111827" }}
                 className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 hover:-translate-y-0.5 text-slate-700 font-semibold text-sm rounded-xl px-6 py-3 border border-slate-200 transition-all duration-150"
               >
                 Offer Your Skills

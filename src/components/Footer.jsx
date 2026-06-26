@@ -17,7 +17,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4" aria-label="SkillBridge home">
-              <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center shrink-0">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                   <path d="M3 9h5M10 9h5M9 3v5M9 10v5" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
                   <circle cx="9" cy="9" r="2" fill="white"/>

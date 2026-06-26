@@ -85,7 +85,7 @@ export default function Testimonials() {
                   </blockquote>
 
                   <figcaption className="flex items-center gap-3 pt-4 border-t border-slate-50">
-                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${t.gradient} flex items-center justify-center text-white font-bold text-xs flex-shrink-0`} aria-hidden="true">
+                    <div className={`w-10 h-10 rounded-xl bg-linear-to-br ${t.gradient} flex items-center justify-center text-white font-bold text-xs shrink-0`} aria-hidden="true">
                       {t.initials}
                     </div>
                     <div>

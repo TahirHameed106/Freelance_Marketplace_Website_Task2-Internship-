@@ -70,7 +70,7 @@ export default function CTA() {
               <ul className="space-y-2 mb-7">
                 {['Set your own rates', 'Work from anywhere', 'Get paid on time, every time'].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-white">
-                    <svg className="w-4 h-4 text-emerald-100 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                    <svg className="w-4 h-4 text-emerald-100 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
                     </svg>
                     {item}

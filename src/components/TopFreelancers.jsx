@@ -49,7 +49,7 @@ export default function TopFreelancers() {
 
                 {/* Avatar */}
                 <div className="flex items-start justify-between mb-4">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${f.gradient} flex items-center justify-center text-white font-bold text-base`} aria-hidden="true">
+                  <div className={`w-14 h-14 rounded-xl bg-linear-to-br ${f.gradient} flex items-center justify-center text-white font-bold text-base`} aria-hidden="true">
                     {f.initials}
                   </div>
                   <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${f.available ? 'bg-emerald-50 text-emerald-600 border border-emerald-100' : 'bg-slate-50 text-slate-400 border border-slate-100'}`}>
