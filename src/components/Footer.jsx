@@ -27,7 +27,7 @@ export default function Footer() {
                 Skill<span className="text-emerald-400">Bridge</span>
               </span>
             </Link>
-            <p className="text-sm leading-relaxed text-slate-500 max-w-[200px]">
+            <p className="text-sm leading-relaxed text-slate-500 max-w-50">
               The trusted marketplace connecting clients with top freelance talent worldwide.
             </p>
             <div className="flex gap-3 mt-5">

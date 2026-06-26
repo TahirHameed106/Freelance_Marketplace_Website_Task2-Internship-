@@ -261,7 +261,67 @@ export function getSellerById(id) {
 }
 
 export function getServiceById(id) {
-  return serviceDetails.find(
-    (service) => service.id === Number(id)
-  ) || null;
+  const serviceId = Number(id);
+
+  // First try to find the full detailed service
+  const detailedService = serviceDetails.find(
+    (service) => service.id === serviceId
+  );
+
+  if (detailedService) {
+    return detailedService;
+  }
+
+  // Otherwise use the basic service from services.js
+  const basicService = services.find(
+    (service) => service.id === serviceId
+  );
+
+  if (!basicService) {
+    return null;
+  }
+
+  // Try to find the seller
+  const seller = sellers.find(
+    (seller) =>
+      seller.name.toLowerCase() ===
+      basicService.freelancer.toLowerCase()
+  );
+
+  return {
+    id: basicService.id,
+    sellerId: seller?.id || null,
+    title: basicService.title,
+    category: basicService.category,
+    banner: basicService.image,
+    gallery: [
+      basicService.image,
+      basicService.image,
+      basicService.image,
+    ],
+    description: basicService.description,
+    features: [
+      "Professional quality work",
+      "Responsive communication",
+      "Source files included",
+      "Fast delivery",
+      "Unlimited support",
+    ],
+    packages: [
+      {
+        name: "Standard",
+        price: basicService.price,
+        delivery: basicService.deliveryDays,
+        revisions: 3,
+        description: basicService.description,
+        includes: [
+          "Professional delivery",
+          "High quality work",
+          "Source files",
+        ],
+      },
+    ],
+    tags: [basicService.category],
+    reviews: [],
+  };
 }

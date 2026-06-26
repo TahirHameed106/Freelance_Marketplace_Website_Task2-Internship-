@@ -30,7 +30,7 @@ export default function CTA() {
               <ul className="space-y-2 mb-7">
                 {['Free to post your project', 'Proposals within 24 hours', 'No commitment required'].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-slate-300">
-                    <svg className="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                    <svg className="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
                     </svg>
                     {item}
@@ -41,6 +41,7 @@ export default function CTA() {
                 href="#"
                 className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white font-semibold text-sm rounded-xl px-6 py-3 transition-all duration-150 shadow-lg shadow-emerald-500/20"
               >
+
                 Post a Project — It's Free
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </a>
@@ -48,7 +49,7 @@ export default function CTA() {
           </div>
 
           {/* Freelancer CTA */}
-          <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl p-8 lg:p-10 relative overflow-hidden">
+          <div className="bg-linear-to-br from-emerald-500 to-teal-600 rounded-3xl p-8 lg:p-10 relative overflow-hidden">
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true" />
 
             <div className="relative">

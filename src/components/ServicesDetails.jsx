@@ -25,7 +25,7 @@ export default function ServicesDetails({ serviceId }) {
       <img
         src={service.banner}
         alt={service.title}
-        className="w-full h-[450px] object-cover rounded-3xl mb-8"
+        className="w-full h-112.5 object-cover rounded-3xl mb-8"
       />
 
       {/* Seller Card */}
