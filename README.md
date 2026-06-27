@@ -210,3 +210,6 @@ No backend or database is used. All data is stored locally inside the `src/data`
 **Purpose:** Internship Assessment Project
 
 **Built With:** Next.js 16, React 19, Tailwind CSS v4
+
+live link 🌐 https://skillbridge-2cm7q05fr-leclercs-projects-6739f3e2.vercel.app/
+
