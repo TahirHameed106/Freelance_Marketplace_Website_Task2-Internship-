@@ -4,7 +4,7 @@ SkillBridge is a modern freelance marketplace web application built with **Next.
 
 ## Live Demo
 
-🌐 https://skillbridge-2cm7q05fr-leclercs-projects-6739f3e2.vercel.app/
+🔗 https://skillbridge-2cm7q05fr-leclercs-projects-6739f3e2.vercel.app/
 
 ---
 
@@ -20,31 +20,33 @@ SkillBridge is a modern freelance marketplace web application built with **Next.
 ## Features
 
 ### Home
-- Responsive navigation
+- Responsive navigation bar
 - Hero section with search
-- Featured categories
+- Trusted companies section
+- Featured service categories
 - Top freelancers
-- Trusted companies
-- How It Works
+- How It Works section
+- Why Choose Us section
 - Statistics
 - Testimonials
-- Call to Action
-- Footer
+- Call-to-Action
+- Responsive footer
 
 ### Services
 - Browse all services
 - Live search
-- Category filters
-- Sorting options
+- Category filtering
+- Multiple sorting options
 - Responsive service cards
+- Active filter chips
 
 ### Seller Profile
 - Seller information
 - Skills
 - Experience
 - Education
-- Portfolio
 - Languages
+- Portfolio gallery
 - Statistics
 - Active services
 
@@ -57,9 +59,16 @@ SkillBridge is a modern freelance marketplace web application built with **Next.
 - Customer reviews
 - Seller information
 
-### Additional Pages
-- About Us
-- Contact
+### About
+- Company introduction
+- Mission & Vision
+- Core values
+- Why choose SkillBridge
+
+### Contact
+- Contact form
+- Company contact information
+- Responsive layout
 
 ---
 
@@ -80,6 +89,10 @@ src/
 │   ├── Footer.jsx
 │   ├── Hero.jsx
 │   ├── Categories.jsx
+│   ├── TopFreelancers.jsx
+│   ├── HowItWorks.jsx
+│   ├── Testimonials.jsx
+│   ├── CTA.jsx
 │   ├── ServiceCard.jsx
 │   ├── SellerProfilePage.jsx
 │   └── ServiceDetailsPage.jsx
@@ -88,12 +101,15 @@ src/
 │   ├── services.js
 │   └── sellers.js
 │
+├── public/
+│   └── services/
+│
 └── globals.css
 ```
 
 ---
 
-## Getting Started
+## Installation
 
 Clone the repository
 
@@ -113,9 +129,9 @@ Run the development server
 npm run dev
 ```
 
-Open your browser and visit:
+Open:
 
-```
+```text
 http://localhost:3000
 ```
 
@@ -126,19 +142,19 @@ http://localhost:3000
 | Route | Description |
 |--------|-------------|
 | `/` | Home |
-| `/services` | Services |
-| `/seller/[id]` | Seller Profile |
-| `/service/[id]` | Service Details |
-| `/about` | About Us |
-| `/contact` | Contact |
+| `/services` | Browse all services |
+| `/seller/[id]` | Seller profile |
+| `/service/[id]` | Service details |
+| `/about` | About page |
+| `/contact` | Contact page |
 
 ---
 
 ## Mock Data
 
-The project currently uses local mock data stored in the `src/data` folder.
+The project currently uses local mock data stored inside the `src/data` directory.
 
-It includes:
+Included data:
 
 - 14 freelance services
 - Seller profiles
@@ -151,24 +167,34 @@ No backend or database is used.
 
 ---
 
-## Project Status
+## Project Progress
 
 | Day | Task | Status |
 |------|------|--------|
-| Day 1 | Home Page | ✅ Completed |
-| Day 2 | Services Page | ✅ Completed |
+| Day 1 | Project setup & Home page | ✅ Completed |
+| Day 2 | Services page | ✅ Completed |
 | Day 3 | Seller Profile & Service Details | ✅ Completed |
-| Day 4 | About & Contact Pages | ✅ Completed |
-| Day 5 | Responsive design, animations, deployment & final polish | Completed |
+| Day 4 | About & Contact pages | ✅ Completed |
+| Day 5 | Responsive design, animations, deployment & final polish | ✅ Completed |
+
+---
+
+## Live Website
+
+https://skillbridge-2cm7q05fr-leclercs-projects-6739f3e2.vercel.app/
 
 ---
 
 ## Internship Project
 
-**Project:** SkillBridge – Freelance Marketplace
+**Project:** SkillBridge — Freelance Marketplace
 
 **Company:** SoftGrid Solutions
 
 **Purpose:** Frontend Internship Assessment
 
-**Built with:** Next.js 16, React 19, Tailwind CSS v4
+**Built With:**
+- Next.js 16
+- React 19
+- Tailwind CSS v4
+- JavaScript (JSX)
