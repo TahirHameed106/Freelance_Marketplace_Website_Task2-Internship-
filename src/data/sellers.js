@@ -36,9 +36,9 @@ export const sellers = [
       { degree: 'B.Sc. Computer Science', institution: 'NYU', year: '2017' },
     ],
     portfolio: [
-      { id: 1, title: 'E-Commerce Platform', image: '/services/ecommerce-platform.jpg', category: 'Web App' },
+      { id: 1, title: 'E-Commerce Platform', image: '/services/ecommerce-store.jpg', category: 'Web App' },
       { id: 2, title: 'SaaS Dashboard', image: '/services/fullstack-web.jpg', category: 'Dashboard' },
-      { id: 3, title: 'Real Estate Portal', image: '/services/real-estate-portal.jpg', category: 'Web App' },
+      { id: 3, title: 'Real Estate Portal', image: 'prism', category: 'Web App' },
       { id: 4, title: 'Mobile Banking UI', image: '/services/mobile-banking-ui.jpg', category: 'UI Design' },
       { id: 5, title: 'Food Delivery App', image: '/services/food-delivery-app.jpg', category: 'Web App' },
       { id: 6, title: 'Analytics Platform', image: '/services/analytics-platform.jpg', category: 'Dashboard' },
