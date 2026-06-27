@@ -20,9 +20,10 @@ function Stars({ rating }) {
 }
 
 export default function ServiceDetailsPage({ service, seller }) {
-  const [selectedPkg, setSelectedPkg] = useState(
-    service.packages.findIndex((p) => p.popular) ?? 0
-  );
+const [selectedPkg, setSelectedPkg] = useState(() => {
+  const index = service.packages.findIndex((p) => p.popular);
+  return index === -1 ? 0 : index;
+});
   const [lightbox, setLightbox] = useState(null);
 
   const avgRating = (service.reviews.reduce((a, r) => a + r.rating, 0) / service.reviews.length).toFixed(1);
