@@ -38,10 +38,10 @@ export const sellers = [
     portfolio: [
       { id: 1, title: 'E-Commerce Platform', image: '/services/ecommerce-store.jpg', category: 'Web App' },
       { id: 2, title: 'SaaS Dashboard', image: '/services/fullstack-web.jpg', category: 'Dashboard' },
-      { id: 3, title: 'Real Estate Portal', image: 'prism', category: 'Web App' },
-      { id: 4, title: 'Mobile Banking UI', image: '/services/mobile-banking-ui.jpg', category: 'UI Design' },
-      { id: 5, title: 'Food Delivery App', image: '/services/food-delivery-app.jpg', category: 'Web App' },
-      { id: 6, title: 'Analytics Platform', image: '/services/analytics-platform.jpg', category: 'Dashboard' },
+      { id: 3, title: 'Real Estate Portal', image: 'https://picsum.photos/seed/port3/600/400', category: 'Web App' },
+      { id: 4, title: 'Mobile Banking UI', image: 'https://picsum.photos/seed/port4/600/400', category: 'UI Design' },
+      { id: 5, title: 'Food Delivery App', image: 'https://picsum.photos/seed/port5/600/400', category: 'Web App' },
+      { id: 6, title: 'Analytics Platform', image: 'https://picsum.photos/seed/port6/600/400', category: 'Dashboard' },
     ],
     services: [1, 2], // service IDs from services.js
   },
@@ -77,12 +77,12 @@ export const sellers = [
       { degree: 'BA Graphic Design', institution: 'Central Saint Martins', year: '2016' },
     ],
     portfolio: [
-      { id: 1, title: 'Fintech Brand Identity', image: '/portfolio/fintech-brand.jpg', category: 'Branding' },
-      { id: 2, title: 'Health App UI', image: '/portfolio/health-app.jpg', category: 'UI Design' },
-      { id: 3, title: 'Restaurant Rebrand', image: '/portfolio/restaurant-rebrand.jpg', category: 'Branding' },
-      { id: 4, title: 'SaaS Product Design', image: '/portfolio/saas-product.jpg', category: 'UI Design' },
-      { id: 5, title: 'Fashion Brand Kit', image: '/portfolio/fashion-brand.jpg', category: 'Branding' },
-      { id: 6, title: 'Mobile App Prototype', image: '/portfolio/mobile-app.jpg', category: 'UI Design' },
+      { id: 1, title: 'Fintech Brand Identity', image: 'https://picsum.photos/seed/design1/600/400', category: 'Branding' },
+      { id: 2, title: 'Health App UI', image: 'https://picsum.photos/seed/design2/600/400', category: 'UI Design' },
+      { id: 3, title: 'Restaurant Rebrand', image: 'https://picsum.photos/seed/design3/600/400', category: 'Branding' },
+      { id: 4, title: 'SaaS Product Design', image: 'https://picsum.photos/seed/design4/600/400', category: 'UI Design' },
+      { id: 5, title: 'Fashion Brand Kit', image: 'https://picsum.photos/seed/design5/600/400', category: 'Branding' },
+      { id: 6, title: 'Mobile App Prototype', image: 'https://picsum.photos/seed/design6/600/400', category: 'UI Design' },
     ],
     services: [4, 5],
   },
@@ -94,11 +94,11 @@ export const serviceDetails = [
     sellerId: 'alex-rivera',
     title: 'Full-Stack Web Application Development',
     category: 'Web Development',
-    banner: '/services/fullstack-web.jpg',
+    banner: 'https://picsum.photos/seed/service-banner1/1200/500',
     gallery: [
-      '/services/sg1.jpg',
-      '/services/sg2.jpg',
-      '/services/sg3.jpg',
+      'https://picsum.photos/seed/sg1/600/400',
+      'https://picsum.photos/seed/sg2/600/400',
+      'https://picsum.photos/seed/sg3/600/400',
     ],
     description: `I will build you a complete, production-ready full-stack web application using modern technologies. Whether you need a SaaS platform, marketplace, dashboard, or custom web app — I deliver clean, scalable, and well-documented code.
 
@@ -172,11 +172,11 @@ My development process follows industry best practices including component-based
     sellerId: 'maya-patel',
     title: 'Brand Identity & Logo Design Package',
     category: 'Graphic Design',
-    banner: '/services/brand-identity.jpg',
+    banner: 'https://picsum.photos/seed/service-banner4/1200/500',
     gallery: [
-      '/services/brand-identity-1.jpg',
-      '/services/brand-identity-2.jpg',
-      '/services/brand-identity-3.jpg',
+      'https://picsum.photos/seed/dg1/600/400',
+      'https://picsum.photos/seed/dg2/600/400',
+      'https://picsum.photos/seed/dg3/600/400',
     ],
     description: `I will create a complete, professional brand identity that makes your business instantly recognizable and trustworthy. A strong brand is your most valuable asset — and I've helped 200+ businesses build theirs.
 
